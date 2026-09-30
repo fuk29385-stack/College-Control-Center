@@ -40,6 +40,7 @@
     <section class="tasks-section" aria-labelledby="tasks-heading">
       <h2 id="tasks-heading">Задачи</h2>
       <ul id="task-list" class="task-list" aria-live="polite"></ul>
+      <p class="empty-state">Сегодня отдыхаем</p>
     </section>
 
     <button id="add-task-button" class="task-add-button" type="button" aria-label="Добавить задачу" aria-haspopup="dialog">
@@ -65,7 +66,7 @@
       <label for="task-description">Описание</label>
       <textarea id="task-description" name="description" rows="4"></textarea>
 
-      <label for="task-completed">
+      <label class="checkbox-label" for="task-completed">
         <input id="task-completed" name="completed" type="checkbox">
         Выполнена
       </label>
