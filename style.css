@@ -228,6 +228,17 @@ main {
 	resize: vertical;
 }
 
+.task-form input[aria-invalid="true"],
+.task-form textarea[aria-invalid="true"] {
+	border-color: #b42318;
+}
+
+.field-error {
+	margin: -0.25rem 0 0.5rem;
+	color: #b42318;
+	font-size: 0.875rem;
+}
+
 .task-form .checkbox-label {
 	display: flex;
 	align-items: center;
@@ -265,6 +276,15 @@ main {
 
 .task-form-actions button:first-child:hover {
 	background: var(--green-dark);
+}
+
+.task-form-actions button:disabled {
+	cursor: not-allowed;
+	opacity: 0.55;
+}
+
+.task-form-actions button:first-child:disabled:hover {
+	background: var(--green);
 }
 
 @media (max-width: 480px) {

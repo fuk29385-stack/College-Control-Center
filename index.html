@@ -50,7 +50,7 @@
   </main>
 
   <dialog id="task-dialog" aria-labelledby="task-dialog-heading">
-    <form method="dialog" class="task-form">
+    <form method="dialog" class="task-form" novalidate>
       <h2 id="task-dialog-heading">Новая задача</h2>
 
       <label for="task-title">Название</label>
@@ -63,7 +63,7 @@
       <input id="task-subject" name="subject" type="text" required>
 
       <label for="task-description">Описание</label>
-      <textarea id="task-description" name="description" rows="4"></textarea>
+      <textarea id="task-description" name="description" rows="4" required minlength="12"></textarea>
 
       <label class="checkbox-label" for="task-completed">
         <input id="task-completed" name="completed" type="checkbox">
@@ -71,7 +71,7 @@
       </label>
 
       <div class="task-form-actions">
-        <button type="submit" value="save">Сохранить</button>
+        <button type="submit" value="save" disabled>Сохранить</button>
         <button type="submit" value="cancel" formnovalidate>Отменить</button>
       </div>
     </form>
