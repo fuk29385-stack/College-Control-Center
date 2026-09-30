@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,5 +8,73 @@
   <script src="app.js" defer></script>
 </head>
 <body>
+  <header class="app-header">
+    <button class="icon-button" type="button" aria-label="Открыть меню">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+    <h1>College Control Center</h1>
+    <button class="icon-button" type="button" aria-label="Профиль">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="8" r="4"></circle>
+        <path d="M5 21v-2a7 7 0 0 1 14 0v2"></path>
+      </svg>
+    </button>
+  </header>
+
+  <main>
+    <section class="calendar-section" aria-labelledby="calendar-heading">
+      <h2 id="calendar-heading">Календарь</h2>
+      <ol class="calendar-weekdays" aria-label="Дни недели">
+        <li><abbr title="Понедельник">Пн</abbr></li>
+        <li><abbr title="Вторник">Вт</abbr></li>
+        <li><abbr title="Среда">Ср</abbr></li>
+        <li><abbr title="Четверг">Чт</abbr></li>
+        <li><abbr title="Пятница">Пт</abbr></li>
+        <li><abbr title="Суббота">Сб</abbr></li>
+        <li><abbr title="Воскресенье">Вс</abbr></li>
+      </ol>
+    </section>
+
+    <section class="tasks-section" aria-labelledby="tasks-heading">
+      <h2 id="tasks-heading">Задачи</h2>
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+    </section>
+
+    <button id="add-task-button" class="task-add-button" type="button" aria-label="Добавить задачу" aria-haspopup="dialog">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M12 5v14M5 12h14"></path>
+      </svg>
+    </button>
+  </main>
+
+  <dialog id="task-dialog" aria-labelledby="task-dialog-heading">
+    <form method="dialog" class="task-form">
+      <h2 id="task-dialog-heading">Новая задача</h2>
+
+      <label for="task-title">Название</label>
+      <input id="task-title" name="title" type="text" required>
+
+      <label for="task-date">Дата</label>
+      <input id="task-date" name="date" type="date" required>
+
+      <label for="task-subject">Предмет</label>
+      <input id="task-subject" name="subject" type="text" required>
+
+      <label for="task-description">Описание</label>
+      <textarea id="task-description" name="description" rows="4"></textarea>
+
+      <label for="task-completed">
+        <input id="task-completed" name="completed" type="checkbox">
+        Выполнена
+      </label>
+
+      <div class="task-form-actions">
+        <button type="submit" value="save">Сохранить</button>
+        <button type="submit" value="cancel" formnovalidate>Отменить</button>
+      </div>
+    </form>
+  </dialog>
 </body>
 </html>
